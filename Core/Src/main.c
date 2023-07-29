@@ -101,11 +101,11 @@ int main(void) {
 	// Segger System View Configuration
 	// 1- Enable  CYCCNT (Cycle Counter Register) for Segger SystemView
 	DWT->CTRL |= (1 << 0);
-	// 2 - Start Recording
+	// 2-  Start Recording
 	SEGGER_SYSVIEW_Conf();
-	vSetVarulMaxPRIGROUPValue();
-	SEGGER_SYSVIEW_Start();
-	SEGGER_RTT_printf(0, "%sHello From Programm. \n"); // some text to check if J_Link RTT Viewer is working
+	//vSetVarulMaxPRIGROUPValue();	// uncomment for Single-shot recording
+	//SEGGER_SYSVIEW_Start();	// uncomment for Single-shot recording //SEGGER_RTT_printf(0, "%sHello From Programm. \n"); // some text to check if J_Link RTT Viewer is working
+
 	// Create Tasks
 
 	xTaskCreate(vTask1_handler, "Task-1", configMINIMAL_STACK_SIZE, NULL, 2,
@@ -232,23 +232,26 @@ static void MX_GPIO_Init(void) {
 
 /* USER CODE BEGIN 4 */
 void vTask1_handler() {
-	 SEGGER_RTT_WriteString(0, "Hello from task A!\n");
+	SEGGER_RTT_WriteString(0, "Hello from task A!\n");
 	uint32_t xLastWakeTime = xTaskGetTickCount();
+	static int w = 0;
 	while (1) {
 		GPIO_toggle(LDO);
+		for (; w <= 1000; w++)
+			__NOP();
 		SEGGER_RTT_WriteString(0, "task 1\n");
-		vTaskDelayUntil(&xLastWakeTime, 3000);
+		vTaskDelayUntil(&xLastWakeTime, 30);
 		//vTaskDelay(1000);
 
 	}
 }
 
 void vTask2_handler() {
-	 SEGGER_RTT_WriteString(0, "Hello from task B!\n");
+	SEGGER_RTT_WriteString(0, "Hello from task B!\n");
 	while (1) {
 		GPIO_toggle(LDG);
-        SEGGER_RTT_WriteString(0, "task 2\n");
-		vTaskDelay(3000);
+		SEGGER_RTT_WriteString(0, "task 2\n");
+		vTaskDelay(3);
 
 	}
 
