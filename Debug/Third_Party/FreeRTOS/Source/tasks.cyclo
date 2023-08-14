@@ -4,14 +4,10 @@ tasks.c:1068:13:prvAddNewTaskToReadyList	8
 tasks.c:1154:10:vTaskDelete	9
 tasks.c:1249:16:xTaskDelayUntil	11
 tasks.c:1336:10:vTaskDelay	4
-tasks.c:1381:16:eTaskGetState	11
+tasks.c:1381:16:eTaskGetState	7
 tasks.c:1478:17:uxTaskPriorityGet	2
 tasks.c:1500:17:uxTaskPriorityGetFromISR	2
 tasks.c:1540:10:vTaskPrioritySet	14
-tasks.c:1706:10:vTaskSuspend	12
-tasks.c:1812:23:prvTaskIsTaskSuspended	5
-tasks.c:1858:10:vTaskResume	6
-tasks.c:1912:16:xTaskResumeFromISR	5
 tasks.c:1987:6:vTaskStartScheduler	4
 tasks.c:2115:6:vTaskEndScheduler	1
 tasks.c:2126:6:vTaskSuspendAll	1
@@ -30,7 +26,7 @@ tasks.c:3165:12:xTaskRemoveFromEventList	4
 tasks.c:3233:6:vTaskRemoveFromUnorderedEventList	4
 tasks.c:3282:6:vTaskSetTimeOutState	2
 tasks.c:3294:6:vTaskInternalSetTimeOutState	1
-tasks.c:3302:12:xTaskCheckForTimeOut	7
+tasks.c:3302:12:xTaskCheckForTimeOut	6
 tasks.c:3367:6:vTaskMissedYield	1
 tasks.c:3423:8:prvIdleTask	2
 tasks.c:3648:13:prvInitialiseTaskLists	2
@@ -52,4 +48,4 @@ tasks.c:4979:16:xTaskGenericNotifyFromISR	16
 tasks.c:5118:10:vTaskGenericNotifyGiveFromISR	8
 tasks.c:5207:16:xTaskGenericNotifyStateClear	4
 tasks.c:5241:14:ulTaskGenericNotifyValueClear	2
-tasks.c:5277:13:prvAddCurrentTaskToDelayedList	6
+tasks.c:5277:13:prvAddCurrentTaskToDelayedList	4

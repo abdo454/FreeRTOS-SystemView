@@ -79,7 +79,7 @@
  **********************************************************************
  */
 #define SEGGER_SYSVIEW_CORE  SEGGER_SYSVIEW_CORE_CM3
-#define SEGGER_SYSVIEW_RTT_BUFFER_SIZE (6*1024)
+#define SEGGER_SYSVIEW_RTT_BUFFER_SIZE (10*1024)
 
 #endif  // SEGGER_SYSVIEW_CONF_H
 

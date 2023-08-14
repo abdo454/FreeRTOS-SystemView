@@ -326,7 +326,7 @@ void vSetVarulMaxPRIGROUPValue(void) {
 	ulMaxPRIGROUPValue <<= portPRIGROUP_SHIFT;
 	ulMaxPRIGROUPValue &= portPRIORITY_GROUP_MASK;
 }
-#endif /* conifgASSERT_DEFINED *
+#endif /* conifgASSERT_DEFINED */
 
 /*
  * See header file for description.

@@ -32,4 +32,5 @@ Third_Party/SEGGER/Config \
 Third_Party/SEGGER/OS \
 Third_Party/SEGGER/SEGGER \
 Third_Party/SEGGER/SEGGER/Syscalls \
+User \
 
